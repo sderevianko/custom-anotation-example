@@ -2,8 +2,8 @@ package test;
 
 public class BadTest {
 
-    final private String soname = "Senjame";
-    final private int ageInDays = 9000;
+    private final String soname = "Senjame";
+    private final int ageInDays = 9000;
 
     public String changeSoname(String soname) {
         return "de " + soname;

@@ -5,8 +5,8 @@ import classpointer.ClassPointer;
 @ClassPointer
 public class Test {
 
-    final private String name = "Sem";
-    final private int age = 30;
+    private final String name = "Sem";
+    private final int age = 30;
 
     public String changeName(String name) {
         return name + "junior";

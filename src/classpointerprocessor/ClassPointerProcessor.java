@@ -11,7 +11,6 @@ import java.util.logging.Logger;
 
 public class ClassPointerProcessor {
     private static final Logger logger = Logger.getLogger(ClassPointerProcessor.class.getName());
-    private Class<?> customClass = null;
     private String fileName;
 
     public void processClasses() {
@@ -29,21 +28,21 @@ public class ClassPointerProcessor {
                 if (position > 0) {
                     fileName = fileName.substring(0, position);
                 }
-                customClass = Class.forName("test." + fileName);
-                getClassMethodsNames();
+                final Class<?> customClass = Class.forName("test." + fileName);
+                getClassMethodsNames(customClass);
             }
         }  catch (Exception e) {
             logger.log(Level.SEVERE, "File not found", e);
         }
     }
 
-    private void getClassMethodsNames() {
+    private void getClassMethodsNames(Class<?> customClass) {
         if (customClass.isAnnotationPresent(ClassPointer.class)) {
             try {
                 final Method[] methods = customClass.getMethods();
-                System.out.println("Class name : " + fileName);
+                logger.info("Class name : "+ fileName);
                 for (Method method : methods) {
-                    System.out.println("Method name : " + method.getName());
+                    logger.info("Method name : " + method.getName());
                 }
             } catch (Exception ex) {
                 logger.log(Level.SEVERE, "Method not found", ex);
