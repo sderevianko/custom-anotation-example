@@ -1,11 +1,11 @@
 package application;
 
-import tester.Tester;
+import classpointerprocessor.ClassPointerProcessor;
 
 public class Main {
 
     public static void main(String[] args) {
-        Tester tester = new Tester();
-        tester.searchMethodsName();
+        final ClassPointerProcessor tester = new ClassPointerProcessor();
+        tester.processClasses();
     }
 }

@@ -5,14 +5,14 @@ import classpointer.ClassPointer;
 @ClassPointer
 public class Test {
 
-    private String name = "Sem";
-    private int age = 30;
+    final private String name = "Sem";
+    final private int age = 30;
 
-    public String ChangerName(String name) {
+    public String changeName(String name) {
         return name + "junior";
     }
 
-    public int ChangerAge(int age) {
+    public int changeAge(int age) {
         return age++;
     }
 

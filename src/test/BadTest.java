@@ -2,14 +2,14 @@ package test;
 
 public class BadTest {
 
-    private String soname = "Senjame";
-    private int ageInDays = 9000;
+    final private String soname = "Senjame";
+    final private int ageInDays = 9000;
 
-    public String ChangerSoname(String soname) {
+    public String changeSoname(String soname) {
         return "de " + soname;
     }
 
-    public int ChangerAgeInDays(int ageInDays) {
+    public int changeAgeInDays(int ageInDays) {
         return ageInDays + 365;
     }
 }
